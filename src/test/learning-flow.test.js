@@ -1,0 +1,37 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {createSampleState} from '../js/samplePack.js';
+import {createStore,STORE_KEY} from '../js/store.js';
+import {createReviewSession} from '../js/session.js';
+import {computeRoomState} from '../js/roomState.js';
+const NOW=1800000000000;
+test('UI-shared review transaction persists, reloads and counts one session per page',()=>{
+  const memory=new Map(),storage={getItem:k=>memory.get(k)??null,setItem:(k,v)=>memory.set(k,v)};
+  const store=createStore(storage);
+  let state=createSampleState(NOW),clock=NOW,sequence=0;
+  assert.equal(store.write(state).ok,true);
+  const makePage=()=>createReviewSession({clock:()=>clock,idFactory:()=>String(++sequence),commit:next=>{if(!store.write(next).ok)return false;state=next;return true;}});
+  let page=makePage();const [first,second]=state.packs[0].cards;
+  assert.equal(page.record(state,first.id,'Remembered').ok,true);
+  assert.equal(state.sessions,1);
+  assert.equal(state.packs[0].cards[0].dueAt,NOW+86400000);
+  assert.equal(computeRoomState(state.packs[0].cards[0].assessments),'lit');
+  clock+=1000;assert.equal(page.record(state,second.id,'Again').ok,true);
+  assert.equal(state.sessions,1);
+  const beforeReload=memory.get(STORE_KEY);
+  state=store.read().data;page=makePage();
+  assert.equal(state.sessions,1);assert.equal(memory.get(STORE_KEY),beforeReload);
+  assert.equal(state.packs[0].cards[0].assessments.length,1);
+  clock+=1000;assert.equal(page.record(state,second.id,'Hard').ok,true);
+  assert.equal(state.sessions,2);
+});
+test('a failed review commit does not consume the page session counter',()=>{
+  let state=createSampleState(NOW),reject=true;
+  const initial=structuredClone(state);
+  const page=createReviewSession({clock:()=>NOW,idFactory:()=> 'r-1',commit:next=>{if(reject)return false;state=next;return true;}});
+  assert.equal(page.record(state,state.packs[0].cards[0].id,'Remembered').ok,false);
+  assert.deepEqual(state,initial);
+  reject=false;
+  assert.equal(page.record(state,state.packs[0].cards[0].id,'Remembered').ok,true);
+  assert.equal(state.sessions,1);
+});

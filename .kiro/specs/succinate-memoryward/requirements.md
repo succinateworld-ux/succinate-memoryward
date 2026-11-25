@@ -1,3 +1,5 @@
+> Amendment, 25 November 2026: Codex updated the original Kiro-generated spec following the user’s explicit nursing-brand and cinematic-motion direction.
+
 # Requirements Document
 
 ## Introduction
@@ -16,7 +18,7 @@ This document covers the full first release as defined in the BUILD-BRIEF: sampl
 - **Room**: The visual and navigational representation of one Card in the memory palace map. Each Room maps one-to-one to a Card.
 - **Room_Map**: The interactive visual grid of Rooms displayed as the main navigation surface.
 - **Room_List**: A keyboard-navigable flat list of Rooms that serves as an always-available alternative to the Room_Map.
-- **Sample_Pack**: The built-in, non-clinical Pack shipped with the App. It contains exactly 10 Cards covering general-knowledge topics.
+- **Sample_Pack**: The built-in Nursing Foundations Pack shipped with the App. It contains exactly 10 source-referenced Cards for nursing revision.
 - **Recall_Challenge**: A screen that displays the Question of a Card and requires the learner to attempt recall before the Answer is shown.
 - **Self_Assessment**: The learner's post-reveal rating of their own recall quality, chosen from three values: `Again`, `Hard`, or `Remembered`. Self-assessments are explicitly labelled as learner self-reports, not verified mastery.
 - **Scheduler**: The deterministic algorithm implementing the documented fixed-interval progression defined in Requirement 5 that calculates the next review date for a Card given its Self_Assessment history.
@@ -42,7 +44,7 @@ This document covers the full first release as defined in the BUILD-BRIEF: sampl
 
 #### Acceptance Criteria
 
-1. THE App SHALL ship with a Sample_Pack containing exactly 10 Cards on a general-knowledge topic unrelated to clinical medicine.
+1. THE App SHALL ship with a Sample_Pack containing exactly 10 Cards on nursing foundations, with credible source references and no patient-specific decision support.
 2. WHEN the App is opened for the first time (Store is empty), THE App SHALL load the Sample_Pack into the Store automatically.
 3. WHEN the Sample_Pack is loaded, THE App SHALL navigate the learner directly to the Room_Map without requiring login, payment, account creation, or any network request.
 4. THE Sample_Pack SHALL be embedded in the App's static build artefacts and require no external API call to retrieve.

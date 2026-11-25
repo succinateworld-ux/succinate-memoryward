@@ -69,7 +69,7 @@ Build the app in nine phases: scaffold → data layer → tests → UI views →
 
 - [ ] 8. Implement `src/js/samplePack.js`
   - Export `SAMPLE_PACK` as a hardcoded JS object matching the Store card schema.
-  - Exactly 10 cards on a general-knowledge topic (e.g., world geography or science history) with no clinical medicine content.
+  - Exactly 10 nursing-foundations cards with source references. Nursing revision only; no patient-specific clinical decision support. User-directed amendment implemented by Codex on 25 November 2026.
   - Assign `id`, `question`, `answer`, `createdAt` (a fixed past timestamp), `dueAt = createdAt`, `streak = 0`, `assessments = []` for each card.
   - No network access; this is a static export.
   - _Requirements: 1.1, 1.4_

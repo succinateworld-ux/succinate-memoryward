@@ -1,3 +1,5 @@
+> User-directed design amendment, implemented by Codex on 25 November 2026: the current theme is a nursing learning lab with an original near-photorealistic healthcare hero, ECG trace, floating nursing topics, layered atmosphere, pointer parallax, room interactions and progress motion. New palaces start with cinematic motion enabled; saved preferences and OS reduced-motion are respected. A single canvas uses 42 lightweight decorative particles at capped DPR 1.5, pauses when hidden and is cleaned up on route changes. Original Kiro-generated design notes below are retained for provenance; this amendment supersedes the older fantasy-palace imagery and opt-in particle details. Nursing Foundations replaces the general-knowledge starter.
+
 # Design Document — Succinate MemoryWard
 
 ## Overview

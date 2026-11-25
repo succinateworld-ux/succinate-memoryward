@@ -1,0 +1,11 @@
+import {cp,mkdir,rm,stat} from 'node:fs/promises';
+import {fileURLToPath} from 'node:url';
+import path from 'node:path';
+const root=fileURLToPath(new URL('../',import.meta.url));
+const output=path.resolve(root,'dist');
+if(output!==path.join(root,'dist'))throw Error('Invalid build target');
+await rm(output,{recursive:true,force:true});
+await mkdir(output,{recursive:true});
+await cp(path.join(root,'src'),output,{recursive:true,filter:p=>!p.split(path.sep).includes('test')&&!p.endsWith('.test.js')});
+await stat(path.join(output,'index.html'));
+console.log('Built static app in dist/ (tests excluded).');

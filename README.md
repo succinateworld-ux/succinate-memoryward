@@ -1,8 +1,8 @@
 # Succinate MemoryWard
 
-A memory palace for private recall practice, by **SuccinateWorld**. This is a new project for Kiroween 2026's Costume Contest category.
+A nursing memory palace for private recall practice, by **SuccinateWorld**. This is a new project for Kiroween 2026's Costume Contest category.
 
-**Development status:** the local application is implemented, 99 automated checks pass, and the static production build succeeds. Public deployment and the submission demo are being prepared; this repository is not evidence of a completed hackathon submission.
+**Development status:** the local application is implemented, 102 automated checks pass, and the static production build succeeds. The earlier version is publicly deployed; this nursing redesign is ready for publication and the updated submission demo is being prepared; this repository is not evidence of a completed hackathon submission.
 
 ## The idea
 
@@ -36,7 +36,7 @@ All study data is stored in this browser's localStorage under `succinate-memoryw
 
 This is a simple deterministic study schedule, not canonical SM-2 or a scientifically validated mastery score. A study session is counted once per page visit with at least one successfully recorded assessment; a reload by itself does not count.
 
-No clinical advice is provided. The sample content is non-clinical; the app does not generate or verify learners' study material.
+The 10-card Nursing Foundations starter covers communication, patient teaching and infection prevention, with links to WHO, CDC and AHRQ references checked on 25 November 2026. This supports nursing revision, not patient-specific clinical decisions or verified competency. Follow current local policy and qualified supervision. Never enter patient identifiers. Custom study material is not verified by the app.
 
 ## Kiro and development provenance
 
@@ -48,7 +48,7 @@ Keep `.kiro` in the public repository. Review project artifacts for secrets befo
 
 ## Accessibility and limits
 
-The interface includes semantic controls, a list alternative to the visual map, visible focus, native confirmation dialogs and reduced-motion support. Ambient animation is opt-in. Chrome checks covered review/reload, custom cards, backup restore, invalid import, 375px layout and reduced motion. See DEVLOG.md for tested behavior and remaining verification limits; no cross-browser or screen-reader certification is claimed.
+The interface includes semantic controls, a list alternative to the visual map, visible focus, native confirmation dialogs and reduced-motion support. Cinematic motion is on for new palaces, with a persistent on/off control and an overriding OS reduced-motion preference. Existing saved motion preferences are preserved. Chrome checks covered review/reload, custom cards, backup restore, invalid import, 375px layout and reduced motion. See DEVLOG.md for tested behavior and remaining verification limits; no cross-browser or screen-reader certification is claimed.
 
 The first release is browser-local. It does not promise offline reloading, collaboration, AI-generated questions or verified learning outcomes. Imports are limited to 2 MB, packs to 10 and rooms to 500 per pack.
 

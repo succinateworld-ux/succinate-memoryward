@@ -1,3 +1,5 @@
+> Current demo: show Nursing Foundations, open SBAR, reveal the AHRQ-linked answer, save a rating and show persisted nursing progress. Use the new healthcare hero. Do not use the older geography walkthrough.
+
 # Working demo plan
 
 Status: script outline only. Do not record or publish claims until the corresponding app behavior has been verified.

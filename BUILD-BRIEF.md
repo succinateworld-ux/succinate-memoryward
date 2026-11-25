@@ -10,7 +10,7 @@ Brand: SuccinateWorld. Target Kiroween category: Costume Contest, whose haunting
 
 ## Complete first release
 
-1. Enter immediately using a built-in, original non-clinical study pack; no account, wallet, payment or external API required.
+1. Enter immediately using a built-in Nursing Foundations study pack with source references; no account, wallet, payment or external API required.
 2. Create a pack using explicit question/answer pairs entered by the learner. Preserve the source answer; never claim that deterministic parsing understands arbitrary notes or generates reliable medical content.
 3. Explore a keyboard-accessible room map, with a conventional list alternative.
 4. Attempt a short recall challenge before revealing the source answer. Learners record Again, Hard or Remembered. Explain that these are self-assessments, not verified mastery.
